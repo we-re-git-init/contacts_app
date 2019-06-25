@@ -1,7 +1,5 @@
-final_array = []
-
-@contacts.each do |contact|
-  final_array << {
+@contacts.map do |contact|
+  {
     id: contact.id,
     first_name: contact.first_name,
     last_name: contact.last_name,
@@ -9,5 +7,3 @@ final_array = []
     phone_number: contact.phone_number
   }
 end
-
-final_array
