@@ -5,4 +5,3 @@
   phone_number: @contact.phone_number,
   id: @contact.id
 }
-
