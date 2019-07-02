@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     # create. this will make new data in the db
     post '/contacts' => 'contacts#create'
 
+    # update. this will change data currently in the db
+    patch '/contacts/:id' => 'contacts#update'
   #   get "/photos" => "photos#index"
   end
 end
