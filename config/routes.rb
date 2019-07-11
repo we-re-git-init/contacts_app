@@ -12,6 +12,11 @@ Rails.application.routes.draw do
 
     # update. this will change data currently in the db
     patch '/contacts/:id' => 'contacts#update'
-  #   get "/photos" => "photos#index"
+    #   get "/photos" => "photos#index"
+
+    post "/users" => "users#create"
+    post "/sessions" => "sessions#create"
+
+
   end
 end
