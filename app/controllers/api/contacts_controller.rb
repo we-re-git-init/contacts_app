@@ -1,14 +1,24 @@
 class Api::ContactsController < ApplicationController
   def index
 
-    @contacts = Contact.all
+    # @contacts = Contact.all
 
     # if you're logged in, see just your contacts
-    if current_user
-      @contacts = current_user.contacts
-    else
-      @contacts = []
-    end
+    # if current_user
+    #   @contacts = current_user.contacts
+    # else
+    #   @contacts = []
+    # end
+
+    group = Group.find_by(name: params[:group_name])
+
+    @contacts = group.contacts
+
+    # also filter based on current_user
+    @contacts = @contacts.where(user_id: current_user.id)
+
+
+
     # if you're not logged in...
     # show them nothing
     render 'index.json.jb'
